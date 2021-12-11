@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
+    'django_extensions',
+    
     'heating_control',
 ]
 
@@ -91,6 +93,11 @@ DATABASES = {
     }
 }
 
+MQTT_CONFIG = {
+    "HOST": env('MQTT_HOST'),
+    "PORT": int(env('MQTT_PORT')),
+    "TIMEOUT": int(env('MQTT_TIMEOUT'))
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
