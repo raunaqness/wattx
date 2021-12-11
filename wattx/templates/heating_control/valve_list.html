@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Valves (Total : {{object_list|length}})</h2>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+            <th scope="col">valveID</th>
+            <th scope="col">roomID</th>
+            <th scope="col">level</th>
+            <th scope="col">created_at</th>
+            <th scope="col">updated_at</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for valve in object_list %}
+                <tr>
+                    <td>{{ valve.valveID }}</td>
+                    <td>{{ valve.room.roomID }}</td>
+                    <td>{{ valve.level }}</td>
+                    <td>{{ valve.created_at }}</td>
+                    <td>{{ valve.updated_at }}</td>
+                </tr>
+            {% endfor %}
+            
+        </tbody>
+        </table>
+
+{% endblock %}
+

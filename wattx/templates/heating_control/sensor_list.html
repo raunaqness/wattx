@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Sensors (Total : {{object_list|length}})</h2>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+            <th scope="col">sensorID</th>
+            <th scope="col">roomID</th>
+            <th scope="col">type</th>
+            <th scope="col">value</th>
+            <th scope="col">created_at</th>
+            <th scope="col">updated_at</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sensor in object_list %}
+                <tr>
+                    <td>{{ sensor.sensorID }}</td>
+                    <td>{{ sensor.room.roomID }}</td>
+                    <td>{{ sensor.type }}</td>
+                    <td>{{ sensor.value }}</td>
+                    <td>{{ sensor.created_at }}</td>
+                    <td>{{ sensor.updated_at }}</td>
+                </tr>
+            {% endfor %}
+            
+        </tbody>
+        </table>
+
+{% endblock %}
+

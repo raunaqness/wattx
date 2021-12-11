@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Rooms (Total : {{object_list|length}})</h2>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+            <th scope="col">roomID</th>
+            <th scope="col">motion_present</th>
+            <th scope="col">created_at</th>
+            <th scope="col">updated_at</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for room in object_list %}
+                <tr>
+                    <td>{{ room.roomID }}</td>
+                    <td>{{ room.motion_present }}</td>
+                    <td>{{ room.created_at }}</td>
+                    <td>{{ room.updated_at }}</td>
+                </tr>
+            {% endfor %}
+            
+        </tbody>
+        </table>
+
+{% endblock %}
+
