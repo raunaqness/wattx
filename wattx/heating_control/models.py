@@ -63,7 +63,8 @@ class Sensor(models.Model):
         null=False,
         blank=False,
         max_length=20,
-        choices=[x.value for x in SensorType]
+        choices=[x.value for x in SensorType],
+        default="temperature"
     )
     value = models.DecimalField(
         max_digits=8,
