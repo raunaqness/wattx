@@ -75,7 +75,7 @@ docker-compose up
     - Rooms : `http://0.0.0.0:8000/heating_control/valves`
 - An MQTT subscriber is also running as a daemon in `wattx` service - `wattx/mqtt_utils/mqtt_subscriber.py` which reads messages from topics defined in `wattx/mqtt_utils/constants.py` including `/readings/temperature` and calls the appropriate function
 - The service `random-sensor-data-generator` (see `docker-compose.yml`) runs a script that sends random temperature data for random sensors to the topic `/readings/temperature` just to showcase the end-to-end functionality of the app. If you open the both urls (Sensors and Valves) in seperate browser windows side by side, you can see the changes in **Sensor** temperature values and subsequent changes in the value of **Valve** openness.
-- the app support having many Sensors in many Rooms! 
+- the app support having many Sensors in many Rooms. Also added a parameter to define whether a Motion Sensor is active or not.
 
 ![demo gif](demo.gif)
 
