@@ -8,8 +8,6 @@ mqtt_config = settings.MQTT_CONFIG
 
 class MQTTPublisher:
     def __init__(self):
-        print("Initializing MQTT Publisher...")
-        
         self.client = paho.Client()
         if self.client.connect(mqtt_config['HOST'], mqtt_config['PORT'], mqtt_config['TIMEOUT']) != 0:
             print("Could not connect to MQTT Broker")

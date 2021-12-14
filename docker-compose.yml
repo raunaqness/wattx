@@ -1,0 +1,22 @@
+version: '3.3'
+
+services:
+  mqtt:
+    network_mode: host
+    image: toke/mosquitto
+  wattx:
+    network_mode: host
+    image: wattx:latest
+    command: "bash start.sh"
+    volumes:
+      - ./wattx:/home/wattx/wattx
+    depends_on:
+      - mqtt
+  random-sensor-data-generator:
+    network_mode: host
+    image: wattx:latest
+    command: "python random-sensor-data-generator.py"
+    volumes:
+      - ./wattx:/home/wattx/wattx
+    depends_on:
+      - wattx

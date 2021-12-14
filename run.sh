@@ -1,0 +1,1 @@
+docker run -it -v /home/ubuntu/dev/wattx:/home/wattx -p 8000:8000 wattx:latest bash
