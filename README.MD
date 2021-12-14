@@ -69,7 +69,7 @@ docker-compose up
 - Models for Sensor, Valve and Room are defined in `wattx/heating_control/models.py`
 - `MySQL` is used as the DB for data persistence simply because it's the default DB setup in Django. In a production setting, would use `PostgreSQL`
 - `toke/mosquitto` docker image is used for MQTT Broker (see `docker-compose.yml`)
-- Django web server is running on `http://0.0.0.0:8000` and 3 endpoints are defined (the pages auto-refresh every second), which show the current values of the following : 
+- Django web server is running on `http://0.0.0.0:8000` and 3 endpoints are defined (the pages auto-refresh every second), which show the current values of the following (there is already some data in the `db.sqlite3`): 
     - Sensors : `http://0.0.0.0:8000/heating_control/sensors`
     - Valves : `http://0.0.0.0:8000/heating_control/valves`
     - Rooms : `http://0.0.0.0:8000/heating_control/valves`
